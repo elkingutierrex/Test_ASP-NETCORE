@@ -1,5 +1,14 @@
-﻿@{
+﻿@model List<string> 
+
+@{
     ViewData["Title"] = "Home Page";
+    string nombre = "elkingutierrex";   
+}
+
+<h1>@nombre</h1>
+
+@foreach(var pais in Model){ 
+    <li>@pais</li>
 }
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">

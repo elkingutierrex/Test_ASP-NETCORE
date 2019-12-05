@@ -12,7 +12,8 @@ namespace TestASP.NETCORE.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            List<string> paises = new List<string> { "Colombia", "Mexico", "Canada","Perú" };
+            return View(paises);
         }
 
         public IActionResult About()
