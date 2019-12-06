@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TestASP.NETCORE.Models;
 
 namespace TestASP.NETCORE.Data
 {
@@ -12,5 +13,7 @@ namespace TestASP.NETCORE.Data
             : base(options)
         {
         }
+
+        public DbSet<Pais> Paises { get; set; }     
     }
 }

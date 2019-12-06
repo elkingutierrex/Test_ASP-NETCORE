@@ -5,14 +5,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TestASP.NETCORE.Models;
+using TestASP.NETCORE.Services;
 
 namespace TestASP.NETCORE.Controllers
 {
     public class HomeController : Controller
     {
+        public IRepositorioPais Repositorio { get; }
+
+        public HomeController(IRepositorioPais repositorio)
+        {
+            Repositorio = repositorio;
+        }
+
         public IActionResult Index()
         {
-            List<string> paises = new List<string> { "Colombia", "Mexico", "Canada","Perú" };
+            var paises = Repositorio.ObtenerTodos();
             return View(paises);
         }
 

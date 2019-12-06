@@ -8,7 +8,15 @@ namespace TestASP.NETCORE.Models
 {
     public class Pais
     {
-        [Key]
+        public Pais()
+        {
+            
+        }
+
+        public Pais(string v)
+        {
+        }
+
         public int id { get; set; }
         public string Nombre { get; set; }
     }

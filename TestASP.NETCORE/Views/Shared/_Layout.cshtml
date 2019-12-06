@@ -33,8 +33,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-controller="Pais" asp-action="Index">Paises</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
+                @*@await  Html.PartialAsync("_LoginPartial")*@
             </div>
         </div>
     </nav>
@@ -45,6 +47,8 @@
         @RenderBody()
         <hr />
         <footer>
+            @*@Component.InvokeAsync("Paises");*@
+            @*<vc:paises></vc:paises>*@
             <p>&copy; 2019 - TestASP.NETCORE</p>
         </footer>
     </div>

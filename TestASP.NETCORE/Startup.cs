@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using TestASP.NETCORE.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TestASP.NETCORE.Services;
 
 namespace TestASP.NETCORE
 {
@@ -33,6 +34,9 @@ namespace TestASP.NETCORE
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            //Add ApplicationServices
+            services.AddScoped<IRepositorioPais, PaisRepositorioEF>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
